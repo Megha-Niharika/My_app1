@@ -1,20 +1,18 @@
 import React from 'react';
 //import logo from './logo.svg';
 import './App.css';
-import ReactDOM from "react-dom"
+//import ReactDOM from "react-dom"
 
 class App extends React.Component{
   render(){
   return (
     <div>
-     <Header/>
-     <Greeting/>
+     {/* <Header username= "Abhay"/>
+     <Greeting/> */}
+     <State/>
       </div>
   )
 }
-
-  
-
     // <div className="App">
     //   <header className="App-header">
     //     <img src={logo} className="App-logo" alt="logo" />
@@ -34,45 +32,63 @@ class App extends React.Component{
   // );
   
 }
-
-class Header extends React.Component{
-
-render(props)
-{
-  return(
-    <div>
-      <h1>welcome!{this.props.username}</h1>
-      </div>
-
-  )
-}
-}
-
-
-
-
-class  Greeting extends React.Component{
-render()
-{
-  const date = new Date()
-  const Hours =  date.getHours()
-  let timeday
-
-  if(Hours < 12){
-    timeday="morning"
-  }
-  else if(Hours >= 12 && Hours < 17)
+class State extends React.Component{
+  constructor()
   {
-    timeday ="afternun"
-
+      super()
+      this.state = {
+        answer:"yes"
   }
-  else{
-    timeday = "night"
-  }
-return(
-  <h1>{timeday} to you</h1>
-)
+}
 
+  render()
+  {
+    return(
+      <div>
+          <h1>state is {this.state}</h1>
+          </div>
+    )
+  }
 }
-}
+
+// class Header extends React.Component{
+
+// render(props)
+// {
+//   return(
+//     <div>
+//       <h1>welcome!{this.props.username}</h1>
+//       </div>
+
+//   )
+// }
+// }
+
+
+
+
+// class  Greeting extends React.Component{
+// render()
+// {
+//   const date = new Date()
+//   const Hours =  date.getHours()
+//   let timeday
+
+//   if(Hours < 12){
+//     timeday="morning"
+//   }
+//   else if(Hours >= 12 && Hours < 17)
+//   {
+//     timeday ="afternun"
+
+//   }
+//   else{
+//     timeday = "night"
+//   }
+// return(
+//   <h1>{timeday} to you</h1>
+// )
+
+// }
+// }
 export default App;
